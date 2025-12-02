@@ -1,9 +1,10 @@
 {
-  "checkpoint_pth": "/content/ACVNet/model.pth",
+  "checkpoint_pth": "/content/ACVNet/ACVNet/model.pth",
   "paths": {
-    "left_folder": "/content/ACVNet/dataset/image_2/",
-    "right_folder": "/content/ACVNet/dataset/image_3/",
-    "disp_folder": "/content/ACVNet/dataset/disp_noc_0/"
+    "left_folder": "/content/ACVNet/ACVNet/dataset/image_2/",
+    "right_folder": "/content/ACVNet/ACVNet/dataset/image_3/",
+    "disp_folder": "/content/ACVNet/ACVNet/dataset/disp_noc_0/"
   }
 }
+
 
