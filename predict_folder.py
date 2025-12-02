@@ -113,7 +113,7 @@ if __name__ == "__main__":
             # Načtení jednoho stereo páru
             try:
                 left_img, right_img, gt_disp, left_img_orig = Load_Image_Single(
-                    left_img_path, right_img_path, disp_map_path, dataset='Tramvaj'
+                    left_img_path, right_img_path, disp_map_path, dataset='KITTI'
                 )
             except Exception as e:
                 print(f"Chyba při načítání obrázku {filename}: {e}. Přeskakuji.")
@@ -121,4 +121,5 @@ if __name__ == "__main__":
             # Vizualizace disparity na prvním vzorku
             left_img, right_img, gt_disp = left_img.to(device), right_img.to(device), gt_disp.to(device)
             pred_disp = model(left_img, right_img)  # Predikovaná disparity mapa
+
             visualize_disparity(left_img[0], pred_disp[-1], left_img_orig[0], gt_disp, dataset=dataset)  # Vykreslit výsledky
