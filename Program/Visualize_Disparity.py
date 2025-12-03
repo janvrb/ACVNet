@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from Program.ACVNet import ACVNet
 import numpy as np
 from Program.Load_Image_Single import Load_Image_Single
+from IPython.display import display, clear_output
 
 def visualize_disparity(left_img, pred_disp, left_img_orig, gt_disp=None, dataset="Tramvaj"):
 
@@ -74,4 +75,7 @@ def visualize_disparity(left_img, pred_disp, left_img_orig, gt_disp=None, datase
     fig.colorbar(im2, ax=axs[1, 0], fraction=0.046, pad=0.04)
     fig.colorbar(im1, ax=axs[0, 1], fraction=0.046, pad=0.04)
 
-    plt.show()
+
+    fig.tight_layout() # Hezké zarovnání
+    display(fig)       # Vynutí zobrazení obrázku v Colabu
+    plt.close(fig)     # Zavře figuru, aby se nehromadila v paměti
