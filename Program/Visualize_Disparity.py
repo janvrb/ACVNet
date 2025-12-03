@@ -55,20 +55,20 @@ def visualize_disparity(left_img, pred_disp, left_img_orig, gt_disp=None, datase
     error_map[mask] = np.abs(pred_disp[mask] - gt_disp[mask])
 
     axs[0, 0].imshow(left_img_orig)  # Levý obrázek
-    axs[0, 0].set_title("Levý obraz", fontsize=34)
+    axs[0, 0].set_title("Levý obraz", fontsize=20)
     axs[0, 0].axis("off")
 
     im1 = axs[0, 1].imshow(pred_disp, cmap='jet')  # Predikovaná disparity mapa
-    axs[0, 1].set_title("Predikovaná disparita", fontsize=34)
+    axs[0, 1].set_title("Predikovaná disparita", fontsize=20)
     axs[0, 1].axis("off")
 
     im2 = axs[1, 0].imshow(gt_disp, cmap='jet')  # Skutečná disparity mapa
-    axs[1, 0].set_title("Ground Truth Disparita", fontsize=34)
+    axs[1, 0].set_title("Ground Truth Disparita", fontsize=20)
     axs[1, 0].axis("off")
 
     # Error mapa
     im = axs[1, 1].imshow(error_map, cmap='hot', vmin=0, vmax=np.percentile(error_map, 99))  
-    axs[1, 1].set_title("Mapa Chyb (Abs Rozdíl)", fontsize=34)
+    axs[1, 1].set_title("Mapa Chyb (Abs Rozdíl)", fontsize=20)
     axs[1, 1].axis("off")
 
     fig.colorbar(im, ax=axs[1, 1], fraction=0.046, pad=0.04)
@@ -81,5 +81,6 @@ def visualize_disparity(left_img, pred_disp, left_img_orig, gt_disp=None, datase
     plt.close() # Důležité: Uvolnit paměť
     
     print(f"Obrázek uložen jako: {filename}")
+
 
 
