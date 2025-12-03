@@ -78,4 +78,5 @@ def visualize_disparity(left_img, pred_disp, left_img_orig, gt_disp=None, datase
 
     fig.tight_layout() # Hezké zarovnání
     display(fig)       # Vynutí zobrazení obrázku v Colabu
-    plt.close(fig)     # Zavře figuru, aby se nehromadila v paměti
+    # plt.close(fig)     # Zavře figuru, aby se nehromadila v paměti
+
