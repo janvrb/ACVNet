@@ -76,7 +76,10 @@ def visualize_disparity(left_img, pred_disp, left_img_orig, gt_disp=None, datase
     fig.colorbar(im1, ax=axs[0, 1], fraction=0.046, pad=0.04)
 
 
-    fig.tight_layout() # Hezké zarovnání
-    display(fig)       # Vynutí zobrazení obrázku v Colabu
-    # plt.close(fig)     # Zavře figuru, aby se nehromadila v paměti
+    filename = f"vysledek_{np.random.randint(0, 10000)}.png"
+    plt.savefig(filename)
+    plt.close() # Důležité: Uvolnit paměť
+    
+    print(f"Obrázek uložen jako: {filename}")
+
 
